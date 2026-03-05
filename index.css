@@ -1,3 +1,8 @@
 .cg{
     color: #4ade80;
 }
+.bg-cg{
+    background-color: #4ade80;
+    border: none;
+    color: white;
+}

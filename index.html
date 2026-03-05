@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,20 +11,22 @@
 </head>
 
 <body>
-    <main class="container text-center mx-auto space-y-5">
-        <h2 class="cg font-bold text-3xl">Choose Your Tree</h2>
-        <div class="grid grid-cols-12">
+    <main class="container mx-auto space-y-5 bg-gray-100">
+        <h2 class="cg font-bold text-center text-3xl">Choose Your Tree</h2>
+        <div class="grid grid-cols-12 gap-5">
 
-            <div class="col-span-3 space-y-5">
+            <div class="col-span-3 space-y-5 card shadow-2xl p-5">
                 <h2 class="cg text-2xl font-bold">Categories</h2>
-                <div id="categories-container">
-                
-                    
+                <button id="allCategoryBtn" class="btn btn-primary mb-5 w-full">All Trees</button>
+                <div id="categories-container" class="card shadow-sm">
                 </div>
             </div>
 
-            <div class="col-span-6">
-                
+            <div id="card-container" class="col-span-6">
+                <div id="trees-contailner" class="grid grid-cols-1 sm:grid-cols-3 gap-6"></div>
+                <div id="loading-spnner" class="h-[60vh] hidden flex justify-center items-center">
+                    <progress class="progress w-56"></progress>
+                </div>
             </div>
 
             <div class="col-span-3">
