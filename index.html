@@ -7,6 +7,8 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <title>Document</title>
 </head>
 
@@ -30,7 +32,27 @@
                 </div>
             </div>
 
-            <div class="col-span-3">
+            <div class="col-span-3 p-4 card shadow-2xl">
+                <h2 class="font-bold text-3xl">Card</h2>
+
+                <div class="space-y-5">
+                    <div id="cart-container" class="space-y-4">
+                        
+                    </div>
+
+                    <div id="Emty-Card" class="text-center py-4 card shadow-2xl">
+                        <span class="w-full h-10"><i class="fa-solid fa-cart-shopping"></i></span>
+                        <p class="font-bold">Your Card Is Emty!</p>
+                        <p class="font-semibold">Add Trees to get started</p>
+                    </div>
+
+
+                    <div class="flex justify-between items-center bg-green-50 rounded-lg p-4 my-3 font-bold">
+                        <span>Total:</span>
+                        <span id="totalprice">0</span>
+                    </div>
+
+                </div>
 
             </div>
         </div>
@@ -43,7 +65,12 @@
                 <div>
                     <div class="flex justify-between items-start mb-4">
                         <h3 class="font-bold text-2xl to-green-700" id="modal-title"></h3>
-                        <button class="btn btn-sm btn-circle btn-ghost" onclick="document.getElementById('tree_modal').close()">X</button>
+                        <button class="btn btn-sm btn-circle btn-ghost"
+                            onclick="document.getElementById('tree_modal').close()">X</button>
+                    </div>
+
+                    <div class="mb-4">
+                        <img id="Modal-Image" class="w-full h-[250px] object-cover rounded-lg" src="" alt="">
                     </div>
 
                     <div class="">
