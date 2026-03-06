@@ -17,13 +17,14 @@
 
             <div class="col-span-3 space-y-5 card shadow-2xl p-5">
                 <h2 class="cg text-2xl font-bold">Categories</h2>
-                <button id="allCategoryBtn" class="btn btn-primary mb-5 w-full">All Trees</button>
-                <div id="categories-container" class="card shadow-sm">
+                <div class="space-y-3 sticky top-10">
+                    <button id="allCategoryBtn" class="btn btn-primary mb-5 w-full">All Trees</button>
+                    <div id="categories-container" class="card shadow-sm"></div>
                 </div>
             </div>
 
             <div id="card-container" class="col-span-6">
-                <div id="trees-contailner" class="grid grid-cols-1 sm:grid-cols-3 gap-6"></div>
+                <div id="trees-contailner" class="grid grid-cols-1 sm:grid-cols-3 gap-6 cursor-pointer"></div>
                 <div id="loading-spnner" class="h-[60vh] hidden flex justify-center items-center">
                     <progress class="progress w-56"></progress>
                 </div>
@@ -33,6 +34,41 @@
 
             </div>
         </div>
+
+        <!-- Open the modal using ID.showModal() method -->
+        <!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
+
+        <dialog id="tree_modal" class="modal">
+            <div class="modal-box">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="font-bold text-2xl to-green-700" id="modal-title"></h3>
+                        <button class="btn btn-sm btn-circle btn-ghost" onclick="document.getElementById('tree_modal').close()">X</button>
+                    </div>
+
+                    <div class="">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <span class="font-bold">Category:</span>
+                            <span id="modal-category" class="badge badge-primary"></span>
+                        </p>
+
+                        <p class="text-sm text-gray-600 mb-4">
+                            <span id="modal-description"></span>
+                        </p>
+
+                        <div class="flex items-baseline gap-2 mb-6">
+                            <span class="text-3xl font-bold to-green-600">৳<span id="modalPricid">0</span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-action">
+                    <form method="dialog">
+                        <!-- if there is a button in form, it will close the modal -->
+                        <button class="btn">Close</button>
+                    </form>
+                </div>
+            </div>
+        </dialog>
     </main>
     <script src="/script.js"></script>
 </body>

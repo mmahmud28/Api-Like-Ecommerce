@@ -36,9 +36,9 @@ const displayTreeCardData = (arrays) => {
         card.className = "card bg-white shadow-sm";
         card.innerHTML = `        
             <figure>
-             <img class="h-48 w-full object-cover" src="${tree.image}"/>
+             <img onclick="openModal(${tree.id})" class="h-40 w-full object-cover" src="${tree.image}"/>
             </figure>
-            <div class="card-body">
+            <div onclick="openModal(${tree.id})" class="card-body">
                   <h2 class="card-title">${tree.name}</h2>
                   <p class="line-clamp-2">${tree.description}</p>
                 <div class="badge badge-outline badge-primary">${tree.category}</div>
@@ -61,6 +61,12 @@ const treesContailner = document.getElementById('trees-contailner');
 const loadingSpnner = document.getElementById("loading-spnner");
 
 const allCategoryBtn = document.getElementById("allCategoryBtn");
+
+const tree_modal = document.getElementById("tree_modal");
+const modalTitle = document.getElementById("modal-title");
+const modalCategory = document.getElementById("modal-category");
+const modalDescription = document.getElementById("modal-description");
+const modalPricid = document.getElementById("modalPricid");
 
 loadPlantsCard();
 
@@ -102,3 +108,14 @@ allCategoryBtn.addEventListener("click",()=>{
 
     loadPlantsCard();
 });
+
+async function openModal (id){
+    const res = await fetch(`https://openapi.programming-hero.com/api/plant/${id}`)
+    const data = await res.json();
+    const plantData = data.plants;
+    modalTitle.textContent=plantData.name;
+    modalCategory.textContent=plantData.category;
+    modalDescription.textContent=plantData.description;
+    modalPricid.textContent=plantData.price;
+    tree_modal.showModal();
+}
